@@ -1,27 +1,35 @@
-import Image from "next/image";
-import { Button } from "@/components/ui/Button";
 import { Header } from "@/components/ui/Header";
+import { LeftSidebar } from "@/components/ui/LeftSidebar";
+import { RightSidebar } from "@/components/ui/RightSidebar";
+import { Feed } from "@/components/ui/Feed";
 
 export default function Home() {
   return (
-    <div className="bg-background font-sans dark:bg-background">
+    <div className="min-h-screen" style={{ backgroundColor: "#F9F6F4" }}>
       <Header />
-      <main className="flex min-h-screen w-full flex-col items-center justify-center pt-24">
-        <div className="flex flex-col items-center gap-6 text-center">
-          <h1 className="max-w-2xl text-5xl font-bold leading-tight tracking-tighter text-foreground dark:text-foreground">
-            Discover Your Next Favorite Story
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-secondary dark:text-secondary">
-            Explore a universe of manga, manhua, and webtoons.
-          </p>
-          <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-            <Button className="h-12 w-full md:w-[158px]">Get Started</Button>
-            <Button variant="ghost" className="h-12 w-full md:w-[158px]">
-              Learn More
-            </Button>
-          </div>
+
+      <div className="max-w-[1400px] mx-auto px-4">
+        <div className="flex gap-6 pt-20 pb-10">
+          {/* Left Sidebar — hidden on mobile/tablet */}
+          <aside className="hidden lg:block w-[260px] flex-shrink-0">
+            <div className="sticky top-20">
+              <LeftSidebar />
+            </div>
+          </aside>
+
+          {/* Main Feed */}
+          <main className="flex-1 min-w-0 max-w-[620px] w-full mx-auto lg:mx-0">
+            <Feed />
+          </main>
+
+          {/* Right Sidebar — hidden on mobile/tablet/large */}
+          <aside className="hidden xl:block w-[300px] flex-shrink-0">
+            <div className="sticky top-20">
+              <RightSidebar />
+            </div>
+          </aside>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
