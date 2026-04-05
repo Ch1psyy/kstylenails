@@ -45,14 +45,7 @@ export function Header() {
           {navLinks.map((item) => (
             <button
               key={item}
-              className="px-3 py-1.5 rounded-full text-sm font-medium transition-colors hover:bg-[#F2CECD]"
-              style={{ color: "#9A7B84" }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "#CE8F9E")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "#9A7B84")
-              }
+              className="px-3 py-1.5 rounded-full text-sm font-medium transition-colors text-[#9A7B84] hover:bg-[#F2CECD] hover:text-[#CE8F9E]"
             >
               {item}
             </button>

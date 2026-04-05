@@ -102,21 +102,7 @@ export function RightSidebar() {
                 <p className="text-[#9A7B84] text-xs truncate">{s.bio}</p>
               </div>
               <button
-                className="text-xs font-semibold rounded-full px-3 py-1 transition-all flex-shrink-0 hover:text-white"
-                style={{
-                  color: "#CE8F9E",
-                  border: "1.5px solid #CE8F9E",
-                }}
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget;
-                  el.style.backgroundColor = "#CE8F9E";
-                  el.style.color = "#FFFFFF";
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget;
-                  el.style.backgroundColor = "transparent";
-                  el.style.color = "#CE8F9E";
-                }}
+                className="text-xs font-semibold rounded-full px-3 py-1 flex-shrink-0 border border-[#CE8F9E] text-[#CE8F9E] hover:bg-[#CE8F9E] hover:text-white transition-all"
               >
                 Следвай
               </button>
